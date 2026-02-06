@@ -307,6 +307,12 @@
 
     /* ---------- YES CLICK ---------- */
     yesBtn.addEventListener("click", () => {
+      
+      fetch("https://maker.ifttt.com/trigger/valentine_yes/with/key/crsdT23cBZ4FsS-Qju8GQw", {
+        mode: "no-cors",
+        keepalive: true
+      });
+      
       zone.style.display = "none";
       hint.style.display = "none";     // HIDE THE HINT
       result.style.display = "block";
@@ -316,6 +322,7 @@
   </script>
 </body>
 </html>
+
 
 
 
