@@ -212,12 +212,11 @@
           particleCount: 10,
           spread: 90,
           startVelocity: 35,
-          ticks: 180,
+          gravity: 0.6,
+          ticks: 220,
           origin: { x: Math.random(), y: Math.random() * 0.3 },
-
-          // ✅ force hearts
           shapes: [heartShape],
-          colors: ["#ff3b7a", "#ff1f68", "#ff7aa2", "#ffd1dc"]
+          colors: ["#8b5cf6", "#7c3aed", "#a78bfa", "#c4b5fd"]
         });
       
         if (Date.now() < end) requestAnimationFrame(frame);
@@ -233,7 +232,7 @@
 
           // ✅ force hearts
           shapes: [heartShape],
-          colors: ["#ff3b7a", "#ff1f68", "#ff7aa2", "#ffd1dc"]
+          colors: ["#8b5cf6", "#7c3aed", "#a78bfa", "#c4b5fd"]
         });
       }, 300);
     }
@@ -301,6 +300,7 @@
   </script>
 </body>
 </html>
+
 
 
 
