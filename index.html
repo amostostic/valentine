@@ -135,6 +135,28 @@
       from { transform: scale(.96); opacity: 0; }
       to { transform: scale(1); opacity: 1; }
     }
+    /* ---------- MOBILE FRIENDLY ---------- */
+    @media (max-width: 420px) {
+      .card {
+        width: 100%;
+        padding: 22px 16px;
+        border-radius: 18px;
+    }
+
+    .button-zone {
+      height: 190px;
+      width: 100%;
+    }
+
+    button {
+      font-size: 18px;
+      padding: 16px 22px;
+      min-width: 140px;
+    }
+
+    #yesBtn { left: 10%; }
+    #noBtn  { left: 55%; }
+  }
   </style>
 </head>
 
@@ -308,6 +330,7 @@
   </script>
 </body>
 </html>
+
 
 
 
