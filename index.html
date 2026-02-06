@@ -117,7 +117,7 @@
     .result {
       display: none;
       margin-top: 18px;
-      animation: pop .35s ease;
+      animation: pop .35s ease, fadeIn .6s ease;
     }
 
     .result h2 {
@@ -135,6 +135,12 @@
       from { transform: scale(.96); opacity: 0; }
       to { transform: scale(1); opacity: 1; }
     }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    
     /* ---------- MOBILE FRIENDLY ---------- */
     @media (max-width: 420px) {
       .card {
@@ -157,6 +163,20 @@
     #yesBtn { left: 10%; }
     #noBtn  { left: 55%; }
   }
+
+  /* ---------- HEARTBEAT ANIMATION ---------- */
+  .art {
+    animation: heartbeat 2.2s ease-in-out infinite;
+  }
+
+  @keyframes heartbeat {
+    0%, 100% {
+      transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
   </style>
 </head>
 
@@ -192,7 +212,8 @@
     <div class="hint" id="hint">‘No’ is playing hard to get 😉</div>
 
     <section class="result" id="result">
-      <h2>YAY! 🎉</h2>
+      <h2>YAY! 💜</h2>
+      <p>I choose you. Always.</p>
       <img
         class="fireworks"
         src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExenltaGJ1YzJ4bDd5dG04ZmxzZzdwbXIydXllazdrNWI3N2I4dzZmZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7k3ThwwMXnHCE/giphy.gif"
@@ -241,7 +262,7 @@
         confettiInstance({
           particleCount: 10,
           spread: 90,
-          startVelocity: 35,
+          startVelocity: 30,
           gravity: 0.6,
           ticks: 220,
           origin: { x: Math.random(), y: Math.random() * 0.3 },
@@ -256,7 +277,8 @@
         confettiInstance({
           particleCount: 220,
           spread: 140,
-          startVelocity: 50,
+          startVelocity: 30,
+          gravity: 0.6,
           ticks: 220,
           origin: { x: 0.5, y: 0.55 },
 
@@ -330,6 +352,7 @@
   </script>
 </body>
 </html>
+
 
 
 
