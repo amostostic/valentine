@@ -218,28 +218,43 @@
       resize: false,
       useWorker: true
     });
+    // 💖 A real heart shape (SVG path) — works consistently across browsers
+    const heartShape = confetti.shapeFromPath({
+      path: "M10 30 C10 15 25 10 30 20 C35 10 50 15 50 30 C50 45 30 55 30 55 C30 55 10 45 10 30 Z",
+      matrix: [0.35, 0, 0, 0.35, 0, 0] // scale the shape to a confetti-sized piece
+    });
+
 
     function fullScreenConfetti() {
       const end = Date.now() + 1600;
 
       (function frame() {
         confettiInstance({
-          particleCount: 12,
+          particleCount: 10,
           spread: 90,
-          startVelocity: 45,
+          startVelocity: 35,
           ticks: 180,
-          origin: { x: Math.random(), y: Math.random() * 0.3 }
+          origin: { x: Math.random(), y: Math.random() * 0.3 },
+
+          // ✅ force hearts
+          shapes: [heartShape],
+          colors: ["#ff3b7a", "#ff1f68", "#ff7aa2", "#ffd1dc"]
         });
+      
         if (Date.now() < end) requestAnimationFrame(frame);
       })();
 
       setTimeout(() => {
         confettiInstance({
-          particleCount: 300,
+          particleCount: 220,
           spread: 140,
-          startVelocity: 60,
+          startVelocity: 50,
           ticks: 220,
-          origin: { x: 0.5, y: 0.55 }
+          origin: { x: 0.5, y: 0.55 },
+
+          // ✅ force hearts
+          shapes: [heartShape],
+          colors: ["#ff3b7a", "#ff1f68", "#ff7aa2", "#ffd1dc"]
         });
       }, 300);
     }
@@ -301,5 +316,6 @@
   </script>
 </body>
 </html>
+
 
 
