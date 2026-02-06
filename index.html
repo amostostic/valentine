@@ -21,14 +21,22 @@
 
     body {
       margin: 0;
-      min-height: 100svh;
+      min-height: 100dvh;                 /* better than 100vh on mobile */
       display: grid;
       place-items: center;
       background: radial-gradient(circle at top, var(--bg2), var(--bg1));
       font-family: system-ui, sans-serif;
-      overflow: hidden;
-      overflow: hidden;
-      padding: 16px;
+
+      /* allow natural scrolling on small screens */
+      overflow-x: hidden;
+      overflow-y: auto;
+
+      /* safe-area padding for notches */
+      padding: 
+        calc(16px + env(safe-area-inset-top))
+        calc(16px + env(safe-area-inset-right))
+        calc(16px + env(safe-area-inset-bottom))
+        calc(16px + env(safe-area-inset-left));
     }
 
     /* FULL-SCREEN CONFETTI CANVAS */
@@ -300,6 +308,7 @@
   </script>
 </body>
 </html>
+
 
 
 
